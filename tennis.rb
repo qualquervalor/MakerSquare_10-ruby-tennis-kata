@@ -39,7 +39,17 @@ module Tennis
       return 'love' if @points == 0
       return 'fifteen' if @points == 1
       return 'thirty' if @points == 2
-      return 'forty' if @points == 3
+      if @points == 3  && @opponent.points < 3
+        return 'forty' 
+      elsif @points >= 3 && @opponent.points == @points
+        return 'deuce'
+      elsif @points >= 3 && @opponent.points == @points - 1
+        return 'advantage'
+      elsif @points >= 3 && @opponent.points <= @points -2
+        return 'win'
+      else
+        return 'unexpected situtation call for a judgement'
+      end   
     end
   end
 end
