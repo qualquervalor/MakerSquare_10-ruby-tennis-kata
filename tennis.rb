@@ -1,5 +1,7 @@
-module Tennis
+  # Public: This is a code kata respresenting scoring of a Tennis game.
+  # it model two player and the ability for each to score points
   class Game
+    # Public: Gets/Sets the player in the game.
     attr_accessor :player1, :player2
 
     def initialize
@@ -20,8 +22,14 @@ module Tennis
     end
   end
 
+  # Public: This is a Player in a modeled Tennis game.  THe player has the ability
+  # to record points and return his score.
   class Player
-    attr_accessor :points, :opponent
+    # Public: Gets/Sets a player point data.
+    attr_accessor :points
+
+    # Public: Gets/Sets the player's oppent
+    attr_accessor :opponent
 
     def initialize
       @points = 0
